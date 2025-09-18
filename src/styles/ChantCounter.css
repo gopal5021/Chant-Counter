@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #fff8e7, #ffe6c9, #fff0d9, #ffe6c9);
+  background-size: 400% 400%;
+
+  animation: gradientShift 20s ease infinite;
+
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.counter-container {
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
+  width: 360px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-container::before {
+  content: "🕉️";
+  font-size: 6rem;
+  color: rgba(255, 165, 0, 0.15);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.counter-container::after {
+  content: "🙏";
+  font-size: 6rem;
+  color: rgba(46, 204, 113, 0.15);
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.counter-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: #d35400;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(255, 165, 0, 0.7);
+}
+
+.chant-display {
+  font-size: 2rem;
+  margin: 25px 0;
+  color: #27ae60;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chant-btn, .reset-btn {
+  padding: 14px 28px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.chant-btn {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.chant-btn:hover {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(230, 126, 34, 0.5);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #c0392b, #962d22);
+  color: white;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(135deg, #962d22, #6e1e16);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(192, 57, 43, 0.5);
+}
+
+.counter-container::after,
+.counter-container::before {
+  pointer-events: none; 
+}
